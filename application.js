@@ -1,5 +1,15 @@
 $(document).ready(function() {
-    $.getJSON("puppies.json", playPuppies);
+
+    $.ajax({
+     url: "https://github.com/crdunwel/secretpuppies/tree/master/data",
+     dataType: 'text',
+     success: function(data) {
+          console.log(data);
+          }
+     });
+
+
+    $.getJSON("https://rawgit.com/crdunwel/secretpuppies/master/data/kittens.json", playPuppies);
 });
 
 function playPuppies(puppies) {
